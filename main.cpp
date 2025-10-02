@@ -12,6 +12,7 @@ void output(Node *);
 void createList(Node *&);
 void deleteNode(Node *&);
 void insertNode(Node *&);
+void deleteLIst(Node *&);
 
 int main() {
     Node *head = nullptr;
@@ -27,17 +28,11 @@ int main() {
 
     insertNode(head);
 
-    /*
-    // deleting the linked list
-    current = head;
-    while (current) {
-        head = current->next;
-        delete current;
-        current = head;
-    }
-    head = nullptr;
     output(head);
-    */
+
+    deleteLIst(head);
+
+    output(head);
 
     return 0;
 }
@@ -142,6 +137,16 @@ void insertNode(Node *&hd){
     newnode->next = current;
     prev->next = newnode;
 
-    output(hd);
+}
 
+void deleteList(Node *& hd){
+    // deleting the linked list
+    Node * current = hd;
+    current = hd;
+    while (current) {
+        hd = current->next;
+        delete current;
+        current = hd;
+    }
+    hd = nullptr;
 }
