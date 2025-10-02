@@ -9,7 +9,8 @@ struct Node {
 };
 
 void output(Node *);
-void createList(Node *);
+void createList(Node *&);
+void deleteNode(Node *&);
 
 int main() {
     Node *head = nullptr;
@@ -99,7 +100,7 @@ void output(Node * hd) {
     cout << endl;
 }
 
-void createList(Node * hd){
+void createList(Node * &hd){
     for (int i = 0; i < SIZE; i++) {
         int tmp_val = rand() % 100;
         Node *newVal = new Node;
