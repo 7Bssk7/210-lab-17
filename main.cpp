@@ -115,6 +115,10 @@ void insertNode(Node *&hd){
     int entry;
     cout << "Choice --> ";
     cin >> entry;
+    while((entry > SIZE -1 )  || (entry < 1)){
+        cout << "Invalid input, please enter your choice again(1-6) --> ";
+        cin >> entry;
+    }
     count = 1;
 
     output(hd);
