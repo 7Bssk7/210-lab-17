@@ -116,12 +116,8 @@ void insertNode(Node *&hd){
     cout << "Choice --> ";
     cin >> entry;
     count = 1;
-    while (current) {
-        cout << "[" << count++ << "] " << current->value << endl;
-        current = current->next;
-    }
-    cout << "Choice --> ";
-    cin >> entry;
+
+    output(hd);
 
     current = hd;
     prev = hd;
@@ -137,6 +133,7 @@ void insertNode(Node *&hd){
     newnode->value = 10000;
     newnode->next = current;
     prev->next = newnode;
+
     output(hd);
 
 }
