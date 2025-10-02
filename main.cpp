@@ -9,28 +9,14 @@ struct Node {
 };
 
 void output(Node *);
+void createList(Node *);
 
 int main() {
     Node *head = nullptr;
     int count = 0;
 
-    // create a linked list of size SIZE with random numbers 0-99
-    for (int i = 0; i < SIZE; i++) {
-        int tmp_val = rand() % 100;
-        Node *newVal = new Node;
-        
-        // adds node at head
-        if (!head) { // if this is the first node, it's the new head
-            head = newVal;
-            newVal->next = nullptr;
-            newVal->value = tmp_val;
-        }
-        else { // its a second or subsequent node; place at the head
-            newVal->next = head;
-            newVal->value = tmp_val;
-            head = newVal;
-        }
-    }
+    createList(head);
+
     output(head);
 
     // deleting a node
@@ -111,4 +97,24 @@ void output(Node * hd) {
         current = current->next;
     }
     cout << endl;
+}
+
+void createList(Node * hd){
+    for (int i = 0; i < SIZE; i++) {
+        int tmp_val = rand() % 100;
+        Node *newVal = new Node;
+        
+        // adds node at head
+        if (!hd) { // if this is the first node, it's the new head
+            hd = newVal;
+            newVal->next = nullptr;
+            newVal->value = tmp_val;
+        }
+        else { // its a second or subsequent node; place at the head
+            newVal->next = hd;
+            newVal->value = tmp_val;
+            hd = newVal;
+        }
+    }
+
 }
