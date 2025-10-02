@@ -10,7 +10,8 @@ struct Node {
 
 void output(Node *);
 void createList(Node *&);
-void deleteNode(Node *&, int en);
+void deleteNode(Node *&);
+void insertNode(Node *&);
 
 int main() {
     Node *head = nullptr;
@@ -20,45 +21,13 @@ int main() {
 
     output(head);
 
-    // deleting a node
-    cout << "Which node to delete? " << endl;
-    output(head);
-    int entry;
-    cout << "Choice --> ";
-    cin >> entry;
-
-    deleteNode(head, entry);
+    deleteNode(head);
 
     output(head);
+
+    insertNode(head);
 
     /*
-    // insert a node
-    current = head;
-    cout << "After which node to insert 10000? " << endl;
-    count = 1;
-    while (current) {
-        cout << "[" << count++ << "] " << current->value << endl;
-        current = current->next;
-    }
-    cout << "Choice --> ";
-    cin >> entry;
-
-    current = head;
-    prev = head;
-    for (int i = 0; i < (entry); i++)
-        if (i == 0)
-            current = current->next;
-        else {
-            current = current->next;
-            prev = prev->next;
-        }
-    //at this point, insert a node between prev and current
-    Node * newnode = new Node;
-    newnode->value = 10000;
-    newnode->next = current;
-    prev->next = newnode;
-    output(head);
-
     // deleting the linked list
     current = head;
     while (current) {
@@ -107,13 +76,20 @@ void createList(Node * &hd){
 
 }
 
-void deleteNode(Node *&hd, int en){
+void deleteNode(Node *&hd){
+    // deleting a node
+    cout << "Which node to delete? " << endl;
+    output(hd);
+    int entry;
+    cout << "Choice --> ";
+    cin >> entry;
+
     Node * current = hd;
 
     // traverse that many times and delete that node
     current = hd;
     Node *prev = hd;
-    for (int i = 0; i < (en-1); i++)
+    for (int i = 0; i < (entry-1); i++)
         if (i == 0)
             current = current->next;
         else {
@@ -126,5 +102,41 @@ void deleteNode(Node *&hd, int en){
         delete current;
         current = nullptr;
     }
+
+}
+
+void insertNode(Node *&hd){
+    Node * current = hd;
+    int count;
+    // insert a node
+    current = hd;
+    Node *prev = hd;
+    cout << "After which node to insert 10000? " << endl;
+    int entry;
+    cout << "Choice --> ";
+    cin >> entry;
+    count = 1;
+    while (current) {
+        cout << "[" << count++ << "] " << current->value << endl;
+        current = current->next;
+    }
+    cout << "Choice --> ";
+    cin >> entry;
+
+    current = hd;
+    prev = hd;
+    for (int i = 0; i < (entry); i++)
+        if (i == 0)
+            current = current->next;
+        else {
+            current = current->next;
+            prev = prev->next;
+        }
+    //at this point, insert a node between prev and current
+    Node * newnode = new Node;
+    newnode->value = 10000;
+    newnode->next = current;
+    prev->next = newnode;
+    output(hd);
 
 }
