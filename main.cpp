@@ -12,7 +12,7 @@ void output(Node *);
 void createList(Node *&);
 void deleteNode(Node *&);
 void insertNode(Node *&);
-void deleteLIst(Node *&);
+void deleteList(Node *&);
 
 int main() {
     Node *head = nullptr;
@@ -30,7 +30,7 @@ int main() {
 
     output(head);
 
-    deleteLIst(head);
+    deleteList(head);
 
     output(head);
 
