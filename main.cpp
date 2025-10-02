@@ -83,6 +83,10 @@ void deleteNode(Node *&hd){
     int entry;
     cout << "Choice --> ";
     cin >> entry;
+    while((entry > SIZE  )  || (entry < 1)){
+        cout << "Invalid input, please enter your choice again(1-7) --> ";
+        cin >> entry;
+    }
 
     Node * current = hd;
 
