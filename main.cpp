@@ -20,7 +20,7 @@ void deleteList(Node *&);
 int main() {
     Node *head = nullptr;
 
-    createList(head); // This fucntion call creates a linked list of SIZE nodes with a random values in it
+    createList(head); // This function call creates a linked list of SIZE nodes with a random values in it
 
     output(head); // This function call outputs a linked list
 
@@ -34,7 +34,7 @@ int main() {
 
     deleteList(head); // This function call deletes all nodes in the linked list and frees memory 
 
-    output(head); // This fucntion call confirms list is empty 
+    output(head); // This function call confirms list is empty 
 
     return 0;
 }
