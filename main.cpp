@@ -1,3 +1,5 @@
+// COMSC 210 | Lab 17 | Arkhip Finski
+// IDE used: Visual Studio
 #include <iostream>
 using namespace std;
 
@@ -36,6 +38,9 @@ int main() {
     return 0;
 }
 
+// output() - outputs the contents of the linked list
+// argument: hd - pointer to the head of the linked list
+// return: returns nothing(void function)
 void output(Node * hd) {
     if (!hd) {
         cout << "Empty list.\n";
@@ -50,6 +55,9 @@ void output(Node * hd) {
     cout << endl;
 }
 
+// createList() creates a linked list of SIZE nodes with a random values in it
+// argument: hd - reference to the head pointer of the linked list 
+// return: returns nothing(void function) 
 void createList(Node * &hd){
     for (int i = 0; i < SIZE; i++) {
         int tmp_val = rand() % 100;
