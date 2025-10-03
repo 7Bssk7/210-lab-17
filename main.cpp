@@ -19,21 +19,21 @@ void deleteList(Node *&);
 int main() {
     Node *head = nullptr;
 
-    createList(head);
+    createList(head); // This fucntion call creates a linked list of SIZE nodes with a random values in it
 
-    output(head);
+    output(head); // This function call outputs a linked list
 
-    deleteNode(head);
+    deleteNode(head); // This function call deletes a node at the position number entered by the user
 
-    output(head);
+    output(head); // This function call outputs a linked list
 
-    insertNode(head);
+    insertNode(head); // This function call inserts a new node with value 10000 at the position number entered by the user 
 
-    output(head);
+    output(head); // This function call outputs a linked list
 
-    deleteList(head);
+    deleteList(head); // This function call deletes all nodes in the linked list and frees memory 
 
-    output(head);
+    output(head); // This fucntion call confirms list is empty 
 
     return 0;
 }
@@ -122,7 +122,7 @@ void deleteNode(Node *&hd){
 
 }
 
-// insertNode() inserts a new node with value 1000 at the position number entered by the user 
+// insertNode() inserts a new node with value 10000 at the position number entered by the user 
 // arguments: hd - reference to the head pointer of the linked list
 // return: returns nothing(void function)
 void insertNode(Node *&hd){
