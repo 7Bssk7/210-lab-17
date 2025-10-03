@@ -16,7 +16,6 @@ void deleteList(Node *&);
 
 int main() {
     Node *head = nullptr;
-    int count = 0;
 
     createList(head);
 
@@ -88,18 +87,26 @@ void deleteNode(Node *&hd){
     // traverse that many times and delete that node
     current = hd;
     Node *prev = hd;
-    for (int i = 0; i < (entry-1); i++)
-        if (i == 0)
-            current = current->next;
-        else {
-            current = current->next;
-            prev = prev->next;
-        }
-    // at this point, delete current and reroute pointers
-    if (current) {  // checks for current to be valid before deleting the node
-        prev->next = current->next;
+    if(entry == 1){
+        hd = current -> next;
         delete current;
         current = nullptr;
+    }
+    else{
+        for (int i = 0; i < (entry-1); i++)
+            if (i == 0)
+                current = current->next;
+            else {
+                current = current->next;
+                prev = prev->next;
+            }
+        // at this point, delete current and reroute pointers
+        if (current) {  // checks for current to be valid before deleting the node
+            prev->next = current->next;
+            delete current;
+            current = nullptr;
+    }
+        
     }
 
 }
