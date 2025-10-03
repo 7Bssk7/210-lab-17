@@ -113,7 +113,6 @@ void deleteNode(Node *&hd){
 
 void insertNode(Node *&hd){
     Node * current = hd;
-    int count;
     // insert a node
     current = hd;
     Node *prev = hd;
@@ -125,7 +124,6 @@ void insertNode(Node *&hd){
         cout << "Invalid input, please enter your choice again(1-6) --> ";
         cin >> entry;
     }
-    count = 1;
 
     output(hd);
 
