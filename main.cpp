@@ -78,6 +78,9 @@ void createList(Node * &hd){
 
 }
 
+// deleteNode() deletes a node at the position number entered by the user 
+// argument: hd - reference to the head pointer of the linked list
+// return: returns nothing(void function)
 void deleteNode(Node *&hd){
     // deleting a node
     cout << "Which node to delete? " << endl;
@@ -119,6 +122,9 @@ void deleteNode(Node *&hd){
 
 }
 
+// insertNode() inserts a new node with value 1000 at the position number entered by the user 
+// arguments: hd - reference to the head pointer of the linked list
+// return: returns nothing(void function)
 void insertNode(Node *&hd){
     Node * current = hd;
     // insert a node
@@ -152,6 +158,9 @@ void insertNode(Node *&hd){
 
 }
 
+// deleteList() deletes all nodes in the linked list and frees memory 
+// argument: hd - reference to the head pointer of the linked list
+// return: returns nothing(void function)
 void deleteList(Node *& hd){
     // deleting the linked list
     Node * current = hd;
