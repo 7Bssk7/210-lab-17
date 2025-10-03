@@ -10,6 +10,7 @@ struct Node {
     Node *next;
 };
 
+// Function prototypes
 void output(Node *);
 void createList(Node *&);
 void deleteNode(Node *&);
